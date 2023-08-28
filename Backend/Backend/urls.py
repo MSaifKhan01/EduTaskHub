@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("user/", include("UserRoutes.urls")),
     path('course/',include("CourseRoutes.urls")),
-    path('enrol/',include("EnRollRoutes.urls"))
+    path('enrol/',include("EnRollRoutes.urls")),
+    path('assignment/',include("AssignmentRoutes.urls"))
 ]

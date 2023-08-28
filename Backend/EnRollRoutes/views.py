@@ -19,6 +19,8 @@ def CreateEnrol(req,courseid):
     else:
         return JsonResponse({"msg":"some error occurred"})
     
+
+    
 def GetStudentEnrolData(req):
        if req.method == "GET":
         student = req.user
@@ -42,6 +44,9 @@ def GetStudentEnrolData(req):
        
        else:
          return JsonResponse({"msg": "Invalid Request"}, status=405)
+       
+
+       
     
 def GetEnrol(req):
     Enroldata=Enroll.objects.all()
