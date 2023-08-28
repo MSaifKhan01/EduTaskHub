@@ -9,3 +9,5 @@ class Assignment(models.Model):
     description=models.CharField(max_length=300)
     start_date=models.DateTimeField(auto_now_add=True)
     end_date=models.DateTimeField()
+    is_active = models.BooleanField(default=True)
+    last_modified = models.DateTimeField(auto_now=True)

@@ -7,17 +7,32 @@ User=get_user_model()
 # Create your views here.
 
 def CreateEnrol(req,courseid):
-    if req.method=="POST":
-        studentid=req.user.id
-        user=User.objects.get(id=studentid)
-        print(req.user.username,req.user.role)
-        if user.role=="instructor":
-            return JsonResponse({"msg":"You cannot enroll"})
-        course=Course.objects.get(id=courseid)
-        enroll=Enroll.objects.create(student=user,course=course)
-        return JsonResponse({"msg":"You have enrolled successfully"})
+    if (req.method == "POST"):
+        user = req.user
+        if user.role == "student":
+
+            course = Course.objects.get(id=courseid)
+            alreadyEnrolled = Enroll.objects.filter(
+                student=user, course=courseid).exists()
+            if alreadyEnrolled:
+                return JsonResponse({"msg": "You Have Already Enrolled"})
+            data = Enroll.objects.create(
+                student=user, course=course
+            )
+            return JsonResponse({"msg": "Enrollment Added Succesfully"}, status=201)
+        else:
+            return JsonResponse({"msg": "You Are Not Authorized"})
     else:
-        return JsonResponse({"msg":"some error occurred"})
+        return JsonResponse({"msg": "Invalid Request"}, status=405)
+    
+
+
+
+   
+    
+
+
+    
     
 
     
@@ -48,8 +63,8 @@ def GetStudentEnrolData(req):
 
        
     
-def GetEnrol(req):
-    Enroldata=Enroll.objects.all()
-    data={"data":list(Enroldata.values())}
+# def GetEnrol(req):
+#     Enroldata=Enroll.objects.all()
+#     data={"data":list(Enroldata.values())}
 
-    return JsonResponse(data)
+#     return JsonResponse(data)
