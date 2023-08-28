@@ -33,22 +33,26 @@ def Register(request):
 
 
 def Login(request):
-    if request.method == "POST":
+     if request.method == "POST":
         body = json.loads(request.body)
-        email = body['email']
-        password = body['password']
+        email = body.get("email")
+        password = body.get("password")
         try:
-            user = User.objects.get(email=email)
-            authenticated_user = authenticate(email=email, password=password)
-            if authenticated_user is not None:
-                login(request, authenticated_user)
-                return JsonResponse({"msg": "login successful"})
-            else:
-                return JsonResponse({"msg": "Authentication failed"})
+            UserModel = User.objects.get(email=email)
+            user = authenticate(email=email, password=password)
+            if user is not None:
+                login(request, user)
+                userobj = {
+                    "id": user.id,
+                    "name": user.username,
+                    "email": user.email,
+                    "role": user.role
+                }
+                return JsonResponse({"msg": "login succesfull", "user": userobj})
         except User.DoesNotExist:
             return JsonResponse({"msg": "User Does Not exist"})
-    else:
-        return JsonResponse({"msg": "Wrong route"})
+     else:
+         return JsonResponse({"msg": "Wrong routes"})
 
 
 

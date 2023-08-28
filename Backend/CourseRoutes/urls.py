@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('create/<int:insid>',views.CreateCourse,name="create"),
-    path('get',views.GetCourse,name="get")
+    path("create", views.CreateCourse, name="createcourse"),
+    path("get", views.GetallCourse, name="getallcourse"),
+    path("getdata/<int:courseID>", views.getCourseByID, name="getbyID")
 ]

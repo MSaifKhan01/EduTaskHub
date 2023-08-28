@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "UserRoutes",
     "EnRollRoutes",
     "CourseRoutes",
-    "AssignmentRoutes"
+    "AssignmentRoutes",
+    "SubmissionRoutes"
 ]
 
 MIDDLEWARE = [

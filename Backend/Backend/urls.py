@@ -22,5 +22,6 @@ urlpatterns = [
     path("user/", include("UserRoutes.urls")),
     path('course/',include("CourseRoutes.urls")),
     path('enrol/',include("EnRollRoutes.urls")),
-    path('assignment/',include("AssignmentRoutes.urls"))
+    path('assignment/',include("AssignmentRoutes.urls")),
+    path("sub/", include("SubmissionRoutes.urls"))
 ]
