@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "corsheaders",
     "UserRoutes",
     "EnRollRoutes",
-    "CourseRoutes"
+    "CourseRoutes",
+    "AssignmentRoutes"
 ]
 
 MIDDLEWARE = [
