@@ -12,7 +12,9 @@ def CreateCourse(req):
     if req.method == "POST":
         try:
             body = json.loads(req.body)
+            image = body.get("image")
             title = body.get("title")
+
             description = body.get("description")
 
             if not title or not description:
@@ -23,7 +25,8 @@ def CreateCourse(req):
                 return JsonResponse({"msg": "Course Already Exists"})
             if user.role == "instructor":
                 data = Course.objects.create(
-                    instructor=user, title=title, description=description
+                    instructor=user, title=title, description=description,
+                    image=image
                 )
                 return JsonResponse({"msg": "Course Created Succesfully", "course_id": data.id}, status=201)
             else:
