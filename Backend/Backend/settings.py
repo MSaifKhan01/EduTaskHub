@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+
 from pathlib import Path
+import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +28,7 @@ SECRET_KEY = 'django-insecure-wx!^%*8f^juc+22_()$8ba!n7p2p&hippv$=s7@+&fhz*ls3jj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -87,15 +90,19 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'EduTaskHub',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Saif@5038',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+PostgreSQL=config("PostgreSqlExternalLink")
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'EduTaskHub',
-        'USER': 'postgres',
-        'PASSWORD': 'Saif@5038',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.parse(PostgreSQL)
 }
 AUTH_USER_MODEL = 'UserRoutes.User'
 AUTHENTICATION_BACKENDS = [
