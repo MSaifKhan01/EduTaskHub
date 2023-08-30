@@ -7,5 +7,5 @@ urlpatterns = [
 
     path('logout', views.Logout, name='logout'),
     
-    path('get', views.get, name='get'),
+    # path('get', views.get, name='get'),
 ]

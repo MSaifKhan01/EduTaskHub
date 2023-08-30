@@ -3,9 +3,10 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.hashers import make_password
-from django.contrib.auth import authenticate, login, logout
-
+from django.contrib.auth import authenticate,logout
+import jwt
 import json
+from decouple import config
 from django.contrib.auth import get_user_model
 User = get_user_model()
 # Create your views here.
@@ -19,6 +20,7 @@ def Register(request):
         password = body['password']
         role=body.get('role','student')
         isEnroll=body.get('isEnroll',False)
+        print(email,password)
 
         # Check if a user with the provided email already exists
         is_user_present = User.objects.filter(email=email).exists()
@@ -62,19 +64,24 @@ def Login(request):
         body = json.loads(request.body)
         email = body['email']
         password = body['password']
+        secretkey=config("secret_key")
+        print(email,password)
         try:
             UserModel = User.objects.get(email=email)
             user = authenticate(email=email, password=password)
          
             if user is not None:
-                login(request, user)
+                payload = {
+                    'userid': user.id  # Token expiration time
+                }
+                token = jwt.encode(payload, secretkey, algorithm='HS256')
                 userobj = {
                     "id": user.id,
                     "name": user.username,
                     "email": user.email,
                     "role": user.role
                 }
-                return JsonResponse({"msg": "login successful","UserData":userobj})  # Return a JsonResponse or HttpResponse
+                return JsonResponse({"msg": "login succesfull","user":userobj,"token":token})  # Return a JsonResponse or HttpResponse
             else:
                 return JsonResponse({"msg": "Invalid credentials"})  # Return an error message
         except User.DoesNotExist:
@@ -96,11 +103,11 @@ def Logout(req):
     
 
 
-def get(request):
-    if request.user.is_authenticated:
-        print(request.user)
-        return JsonResponse({"msg": "welcome"})
-    else:
-        return JsonResponse({"msg": "Login first"})
+# def get(request):
+#     if request.user.is_authenticated:
+#         print(request.user)
+#         return JsonResponse({"msg": "welcome"})
+#     else:
+#         return JsonResponse({"msg": "Login first"})
 
 

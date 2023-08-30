@@ -3,43 +3,79 @@ from django.http import JsonResponse
 from AssignmentRoutes.models import Assignment
 from .models import Submission
 import json
+from django.contrib.auth import get_user_model
+User=get_user_model()
 
 
 def submitbyStudent(req, assignID):
-    if (req.method == "POST"):
-        user = req.user
-        body = json.loads(req.body)
-        submission_link = body.get("submission_link")
+    # if (req.method == "POST"):
+    #     user = req.user
+    #     body = json.loads(req.body)
+    #     submission_link = body.get("submission_link")
+    #     userid=req.userid
+    #     user=User.objects.get(id=userid)
 
-        if (user.role == "instructor"):
-            return JsonResponse({"msg": "UnAuthorized"})
-        assignment = Assignment.objects.get(id=assignID)
-        submited = Submission.objects.create(
-            student=user, assignment=assignment, submission_link=submission_link)
-        return JsonResponse({"msg": "Assignment Submitted Succesfully"}, status=201)
+    #     if (user.role == "instructor"):
+    #         return JsonResponse({"msg": "UnAuthorized"})
+    #     assignment = Assignment.objects.get(id=assignID)
+    #     submited = Submission.objects.create(
+    #         student=user, assignment=assignment, submission_link=submission_link)
+    #     return JsonResponse({"msg": "Assignment Submitted Succesfully"}, status=201)
+    # else:
+    #     return JsonResponse({"msg": "Invalid Request"}, status=405)
+    if req.method=="POST":
+        body=json.loads(req.body)
+        submission_link=body.get('submission_link')
+        userid=req.userid
+        user=User.objects.get(id=userid)
+        assignment=Assignment.objects.get(id=assignID)
+        submission=Submission.objects.create(student=user,assignment=assignment,submission_link=submission_link)
+        return JsonResponse({"msg":"Submitted"})
     else:
-        return JsonResponse({"msg": "Invalid Request"}, status=405)
+        return JsonResponse({"msg":"some error occured"})
 
 
 def getsubmissions(req, assignID):
     if (req.method == "GET"):
-        user = req.user
-        if (user.role == "student"):
-            return JsonResponse({"msg": "UnAuthorized"})
-        assignment = Assignment.objects.get(id=assignID)
-        submission = Submission.objects.filter(assignment=assignment)
-        data = []
-        for item in submission:
-            obj = {
-                "id": item.id,
-                "student_name": item.student.username,
-                "instructor_name": assignment.course.instructor.username,
-                "course_name": assignment.course.title,
-                "submission_link": item.submission_link,
-                "submission_date": item.submission_date,
+    #     user = req.user
+    #     if (user.role == "student"):
+    #         return JsonResponse({"msg": "UnAuthorized"})
+    #     assignment = Assignment.objects.get(id=assignID)
+    #     submission = Submission.objects.filter(assignment=assignment)
+    #     data = []
+    #     for item in submission:
+    #         obj = {
+    #             "id": item.id,
+    #             "student_name": item.student.username,
+    #             "instructor_name": assignment.course.instructor.username,
+    #             "course_name": assignment.course.title,
+    #             "submission_link": item.submission_link,
+    #             "submission_date": item.submission_date,
 
-            }
-            data.append(obj)
-        return JsonResponse({"data": data}, status=200)
+    #         }
+    #         data.append(obj)
+    #     return JsonResponse({"data": data}, status=200)
+    # else:
+    #     return JsonResponse({"msg": "Invalid Request"}, status=405)
+     user = req.user
+    if (user.role == "student"):
+            return JsonResponse({"msg": "UnAuthorized"})
+    
+
+    assignment=Assignment.objects.get(id=assignID)
+    allsubmission=Submission.objects.filter(assignment=assignment)
+    data=[]
+    for item in allsubmission:
+        obj={
+            "id":item.id,
+            "studentname":item.student.username,
+            "instructorname":assignment.course.instructor.username,
+            "coursename":assignment.course.title,
+            "submission_date":item.submission_date,
+            "submission_link":item.submission_link,
+        }
+        data.append(obj)
+        return JsonResponse({"data":data})
     else:
-        return JsonResponse({"msg": "Invalid Request"}, status=405)
+        return JsonResponse({"msg":"Invalid"},status=405)
+    

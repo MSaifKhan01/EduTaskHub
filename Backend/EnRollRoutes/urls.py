@@ -5,5 +5,5 @@ urlpatterns = [
 
     path('getstudent',views.GetStudentEnrolData,name="getstudent"),
     
-    # path('get',views.GetEnrol,name='get')
+    path('get',views.GetEnrol,name='get')
 ]
