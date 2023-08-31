@@ -33,6 +33,7 @@ def CreateEnrol(req,courseid):
         if user.role=="instructor":
             return JsonResponse({"msg":"You cannot enroll"})
         course=Course.objects.get(id=courseid)
+        print(course)
         alreadyenrol=Enroll.objects.filter(student=user,course=course)
         if alreadyenrol:
             return JsonResponse({"msg":"You have already enrolled"})

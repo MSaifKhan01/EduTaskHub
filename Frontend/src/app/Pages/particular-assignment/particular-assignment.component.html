@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<app-student-dashboard></app-student-dashboard>
+<div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+  <div class="mt-0 w-1/2 p-8 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+      <label for="" class="text-xl font-bold text-gray-800 dark:text-white">Assignment Title:</label>
+      <h1 class="text-3xl font-semibold mb-4 text-gray-800 dark:text-white">{{ data.title }}</h1>
+      <label for="" class="text-xl font-bold text-gray-800 dark:text-white">Assignment description:</label>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">{{ data.description }}</p>
+
+      <div class="mb-4">
+          <p class="text-gray-700 dark:text-gray-400">Start Date - {{ data.start_date | date:'medium' }}</p>
+          <p class="text-gray-700 dark:text-gray-400">End Date - {{ data.end_date | date:'medium' }}</p>
+      </div>
+
+      <label class="block mb-2 font-semibold text-gray-700 dark:text-gray-300" for="link">Submit Your Link:</label>
+      <input type="text" id="link" class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-700 dark:text-gray-300">
+
+      <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">Submit</button>
+  </div>
+</div>
+

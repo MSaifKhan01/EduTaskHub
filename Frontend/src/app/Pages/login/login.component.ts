@@ -20,6 +20,7 @@ export class LoginComponent {
     this.studentService.loginstudent(obj).subscribe((res)=>{
       console.log(res)
       if(res.msg=="login succesfull"){
+        localStorage.setItem('user', JSON.stringify(res.user));
         localStorage.setItem("token",res.token)
         this.router.navigate(['/'])
       }
