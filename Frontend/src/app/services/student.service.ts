@@ -10,6 +10,7 @@ export class StudentService {
   // private url="https://ed-tech-backend-8way.onrender.com"
    // private Myurl="https://edutaskhubbackend.onrender.com"
    token:string=localStorage.getItem("token")||""
+   
    private url="http://localhost:8000"
  
   constructor(private http:HttpClient) { }
@@ -25,6 +26,7 @@ export class StudentService {
   }
 
   enrolCourse(id:number):Observable<any>{
+    console.log(this.token)
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
@@ -37,6 +39,27 @@ export class StudentService {
       Authorization: `Bearer ${this.token}`
     })
     const url=`http://localhost:8000/enrol/getstudent`
+    return this.http.get<any>(url,{headers})
+  }
+
+
+
+
+
+  //  31-08
+  getAllassignment():Observable<any>{
+    let headers=new HttpHeaders({
+      Authorization: `Bearer ${this.token}`
+    })
+    let url=`http://localhost:8000/assignment/get`
+    return this.http.get<any>(url,{headers})
+  }
+
+  getParticular(id:any):Observable<any>{
+    let headers=new HttpHeaders({
+      Authorization: `Bearer ${this.token}`
+    })
+    const url=`${this.url}/assignment/see/${id}`
     return this.http.get<any>(url,{headers})
   }
 }

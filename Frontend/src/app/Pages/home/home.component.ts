@@ -17,13 +17,17 @@ export class HomeComponent implements OnInit{
 
   getallcourse(){
     this.BaseService.getAllCourse().subscribe((res)=>{
+      
+      // alert(res.error.msg)
       this.datas=res.data
     })
   }
 
   HandleClick(id:number){
     this.StudentService.enrolCourse(id).subscribe((res)=>{
-      console.log(res)
+      // localStorage.setItem("token",res.i)
+      // console.log(res.data)
+      // console.log(res)
       alert(res.msg)
     })
   }
@@ -33,6 +37,12 @@ export class HomeComponent implements OnInit{
       console.log(res)
     })
   }
+  // create(){
+  //   this.StudentService.enrolCourse(id).subscribe((res)=>{
+  //     console.log(res)
+  //     alert(res.msg)
+  //   })
+  // }
 
 
 }

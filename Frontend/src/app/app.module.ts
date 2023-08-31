@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { StudentEnrollDataComponent } from './Pages/student-enroll-data/student-enroll-data.component';
+import { ParticularAssignmentComponent } from './Pages/particular-assignment/particular-assignment.component';
+import { AllAssignmentComponent } from './Pages/all-assignment/all-assignment.component';
+import { StudentDashboardComponent } from './Components/student-dashboard/student-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,10 @@ import { StudentEnrollDataComponent } from './Pages/student-enroll-data/student-
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    StudentEnrollDataComponent
+    StudentEnrollDataComponent,
+    ParticularAssignmentComponent,
+    AllAssignmentComponent,
+    StudentDashboardComponent
   ],
   imports: [
     BrowserModule,
