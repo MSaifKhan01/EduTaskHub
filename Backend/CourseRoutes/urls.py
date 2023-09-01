@@ -3,5 +3,5 @@ from . import views
 urlpatterns = [
     path("create", views.CreateCourse, name="createcourse"),
     path("get", views.GetallCourse, name="getallcourse"),
-    path("getdata/<int:courseID>", views.getCourseByID, name="getbyID")
+    path("instrucCourses", views.getCourseByID, name="instrucCourses")
 ]

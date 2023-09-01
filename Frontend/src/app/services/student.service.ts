@@ -62,4 +62,13 @@ export class StudentService {
     const url=`${this.url}/assignment/see/${id}`
     return this.http.get<any>(url,{headers})
   }
+
+  SubmitAssign(obj:any,id:number):Observable<any>{
+    let headers=new HttpHeaders({
+      Authorization: `Bearer ${this.token}`
+    })
+    const url=`${this.url}/sub/submit/${id}`
+    return this.http.post(url,obj,{headers})
+
+  }
 }

@@ -52,7 +52,9 @@ export class NavbarComponent {
     this.toggleLogin = false;
  
     alert('Logout Succesfully');
-    window.location.reload();
+    this.router.navigate(['']);
+    // window.location.reload();
   }
 
+  
 }

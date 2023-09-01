@@ -1,0 +1,36 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    StudentId
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    StudentName
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Submission_date
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Submission_link
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of datas" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{data.studentid}}
+                </td>
+                <th class="px-6 py-4">
+                    {{data.studentname}}
+                </th>
+                <td class="px-6 py-4">
+                    {{data.submission_date|date:'medium'}}
+                </td>
+                <td class="px-6 py-4">
+                    <a [href]="data.submission_link" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{data.submission_link}}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

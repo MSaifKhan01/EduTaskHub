@@ -93,6 +93,19 @@ def ParticularAssignment(req,assignID):
         return JsonResponse({"data":AssignmentObj})
     else:
         return JsonResponse({"msg":"some error occured"})
+    
+
+
+
+
+def ParticularCourse(req,courseID):
+    if req.method=="GET":
+        course=Course.objects.get(id=courseID)
+        allassignments=Assignment.objects.filter(course=course)
+        data={"data":list(allassignments.values())}
+        return JsonResponse(data)
+    else:
+        return JsonResponse({"msg":"some error occured"})
 
      
 

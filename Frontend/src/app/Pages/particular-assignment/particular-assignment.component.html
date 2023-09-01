@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+
 <app-student-dashboard></app-student-dashboard>
 <div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
   <div class="mt-0 w-1/2 p-8 bg-white dark:bg-gray-800 shadow-md rounded-lg">
@@ -13,9 +14,9 @@
       </div>
 
       <label class="block mb-2 font-semibold text-gray-700 dark:text-gray-300" for="link">Submit Your Link:</label>
-      <input type="text" id="link" class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-700 dark:text-gray-300">
+      <input type="text" id="link" class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-700 dark:text-gray-300"  [(ngModel)]="link">
 
-      <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">Submit</button>
+      <button (click)="HandleClick(data.id)" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">Submit</button>
   </div>
 </div>
 

@@ -10,12 +10,14 @@ export class RegisterComponent {
   username!:string
   email!:string
   password!:string
+  role!:string
   constructor(private studentService:StudentService,private router:Router){}
   HandleSubmit(){
     let obj={
       username:this.username,
       email:this.email,
-      password:this.password
+      password:this.password,
+      role:this.role
     }
     this.studentService.registerStudent(obj).subscribe((res)=>{
       console.log(res)

@@ -29,6 +29,9 @@ def submitbyStudent(req, assignID):
         userid=req.userid
         user=User.objects.get(id=userid)
         assignment=Assignment.objects.get(id=assignID)
+        alreadysubmit=Submission.objects.filter(student=user,assignment=assignment).exists()
+        if alreadysubmit:
+            return JsonResponse({"msg":"You have already submitted the assignment"})
         submission=Submission.objects.create(student=user,assignment=assignment,submission_link=submission_link)
         return JsonResponse({"msg":"Submitted"})
     else:
@@ -36,45 +39,21 @@ def submitbyStudent(req, assignID):
 
 
 def getsubmissions(req, assignID):
-    if (req.method == "GET"):
-    #     user = req.user
-    #     if (user.role == "student"):
-    #         return JsonResponse({"msg": "UnAuthorized"})
-    #     assignment = Assignment.objects.get(id=assignID)
-    #     submission = Submission.objects.filter(assignment=assignment)
-    #     data = []
-    #     for item in submission:
-    #         obj = {
-    #             "id": item.id,
-    #             "student_name": item.student.username,
-    #             "instructor_name": assignment.course.instructor.username,
-    #             "course_name": assignment.course.title,
-    #             "submission_link": item.submission_link,
-    #             "submission_date": item.submission_date,
-
-    #         }
-    #         data.append(obj)
-    #     return JsonResponse({"data": data}, status=200)
-    # else:
-    #     return JsonResponse({"msg": "Invalid Request"}, status=405)
-     user = req.user
-    if (user.role == "student"):
-            return JsonResponse({"msg": "UnAuthorized"})
-    
-
-    assignment=Assignment.objects.get(id=assignID)
-    allsubmission=Submission.objects.filter(assignment=assignment)
-    data=[]
-    for item in allsubmission:
-        obj={
-            "id":item.id,
-            "studentname":item.student.username,
-            "instructorname":assignment.course.instructor.username,
-            "coursename":assignment.course.title,
-            "submission_date":item.submission_date,
-            "submission_link":item.submission_link,
-        }
-        data.append(obj)
+    if req.method=="GET":
+        assignment=Assignment.objects.get(id=assignID)
+        allsubmission=Submission.objects.filter(assignment=assignment)
+        data=[]
+        for sub in allsubmission:
+            obj={
+                "id":sub.id,
+                "studentid":sub.student.id,
+                "studentname":sub.student.username,
+                "instructorname":assignment.course.instructor.username,
+                "coursename":assignment.course.title,
+                "submission_date":sub.submission_date,
+                "submission_link":sub.submission_link
+            }
+            data.append(obj)
         return JsonResponse({"data":data})
     else:
         return JsonResponse({"msg":"Invalid"},status=405)

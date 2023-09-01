@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class BaseServiceService {
 
-  // private url="https://ed-tech-backend-8way.onrender.com"
+  
   // private Myurl="https://edutaskhubbackend.onrender.com"
   token:string=localStorage.getItem("token")||""
   private url="http://localhost:8000"
@@ -18,5 +18,42 @@ export class BaseServiceService {
     })
     const geturl=`${this.url}/course/get`
     return this.http.get<any>(geturl,{headers})
+  }
+
+  getInstructorCourse():Observable<any>{
+    let headers=new HttpHeaders({
+      Authorization:`Bearer ${this.token}`
+    })
+    const url=`${this.url}/course/instrucCourses`
+    return this.http.get<any>(url,{headers})
+  }
+
+
+  particularCourseAssign(id:any):Observable<any>{
+    let headers=new HttpHeaders({
+      Authorization:`Bearer ${this.token}`
+    })
+    const url=`${this.url}/assignment/ParticularCourse/${id}`
+    return this.http.get<any>(url,{headers})  
+  }
+
+
+
+  CreateAssignment(obj:any,id:any):Observable<any>{
+    let headers=new HttpHeaders({
+      Authorization:`Bearer ${this.token}`
+    })
+    const url=`${this.url}/assignment/create/${id}`
+    return this.http.post<any>(url,obj,{headers})
+
+  }
+
+  SeeSubmission(id:any){
+    let headers=new HttpHeaders({
+      Authorization:`Bearer ${this.token}`
+    })
+    // console.log(id)
+    const url=`${this.url}/sub/getsub/${id}`
+    return this.http.get<any>(url,{headers})
   }
 }
