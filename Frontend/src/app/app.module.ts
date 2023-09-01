@@ -15,6 +15,11 @@ import { StudentEnrollDataComponent } from './Pages/student-enroll-data/student-
 import { ParticularAssignmentComponent } from './Pages/particular-assignment/particular-assignment.component';
 import { AllAssignmentComponent } from './Pages/all-assignment/all-assignment.component';
 import { StudentDashboardComponent } from './Components/student-dashboard/student-dashboard.component';
+import { CeateAssignmentComponent } from './Components/ceate-assignment/ceate-assignment.component';
+import { CeateCourseComponent } from './Components/ceate-course/ceate-course.component';
+import { InstructorCourcesComponent } from './Pages/instructor-cources/instructor-cources.component';
+import { ParticularCourseAssignmentsComponent } from './Pages/particular-course-assignments/particular-course-assignments.component';
+import { SubmissionComponent } from './Pages/submission/submission.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +31,12 @@ import { StudentDashboardComponent } from './Components/student-dashboard/studen
     StudentEnrollDataComponent,
     ParticularAssignmentComponent,
     AllAssignmentComponent,
-    StudentDashboardComponent
+    StudentDashboardComponent,
+    CeateAssignmentComponent,
+    CeateCourseComponent,
+    InstructorCourcesComponent,
+    ParticularCourseAssignmentsComponent,
+    SubmissionComponent
   ],
   imports: [
     BrowserModule,

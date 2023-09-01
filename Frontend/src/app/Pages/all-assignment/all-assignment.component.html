@@ -3,7 +3,10 @@
 <h1 class="text-center font-bold text-2xl bg-gray-300 py-3">Courses Assignments</h1>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
     <div *ngFor="let data of datas"
+
         class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <h1 class="text-center text-blue-500 font-semibold">Course-Name: {{ data.course_name }}</h1>
+
         <a href="#">
             <h5 class="mb-2 text-2xl font-semibold tracking-tight text-blue-900 dark:text-white">{{data.title}}</h5>
         </a>

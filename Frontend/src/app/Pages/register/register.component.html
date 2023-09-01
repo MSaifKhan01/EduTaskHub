@@ -1,4 +1,4 @@
-
+<app-navbar></app-navbar>
 <div class="flex justify-center items-center min-h-screen bg-gray-100 bg-cover bg-center" style="background-image: url('../../../assets/projectVideoImage/BgImageSignupLogin.jpg');">
     <form (submit)="HandleSubmit()" class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
       <div class="mb-6">
@@ -34,6 +34,19 @@
           placeholder="********"
         >
       </div>
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="role">Select your role</label>
+        <select
+          id="role"
+          name="role"
+          [(ngModel)]="role"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+        >
+          <option value="student">Student</option>
+          <option value="instructor">Instructor</option>
+        </select>
+      </div>
+      
       <button
         type="submit"
         class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"

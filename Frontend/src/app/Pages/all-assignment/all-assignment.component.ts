@@ -17,6 +17,7 @@ export class AllAssignmentComponent implements OnInit{
   allAssignments(){
     this.studentService.getAllassignment().subscribe((res)=>{
       this.datas=res.data
+      console.log(res)
     })
   }
 

@@ -101,15 +101,15 @@ def GetallCourse(req):
         return JsonResponse({"msg": "Invalid request"}, status=405)
 
 # anyone can access after login
-def getCourseByID(req, courseID):
+def getCourseByID(req):
     if (req.method == "GET"):
-        courcedata = Course.objects.get(id=courseID)
-
-        obj = {
-            "id": courcedata.id,
-            "title": courcedata.title,
-            "description": courcedata.description
-        }
-        return JsonResponse(obj)
+        userid=req.userid
+        instructor=User.objects.get(id=userid)
+        instructorcourses=Course.objects.filter(instructor=instructor)
+        data={"data":list(instructorcourses.values())}
+        return JsonResponse(data)
     else:
         return JsonResponse({"msg": "Invalid Request"}, status=405)
+    
+
+    
