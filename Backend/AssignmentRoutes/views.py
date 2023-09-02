@@ -63,6 +63,7 @@ def SeeAssignment(req):
         for enroll in studentEnrolled:
             course=enroll.course
             assignment=Assignment.objects.filter(course=course)
+            print(assignment)
             for assign in assignment:
                 obj={
                     "title":assign.title,

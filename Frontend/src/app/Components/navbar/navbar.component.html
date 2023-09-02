@@ -14,7 +14,7 @@
        
       </button>
       <button *ngIf="!toggleLogin" class=" px-4 py-2 rounded-md hover:bg-gray-200 font-bold">EduTaskHub Business</button>
-      <a *ngIf="toggleLogin" href="/course" class=" px-4 py-2 rounded-md hover:bg-gray-200 font-bold">Student Portal</a>
+      <a *ngIf="toggleLogin" (click)="Onclick()"href="/course" class=" px-4 py-2 rounded-md hover:bg-gray-200 font-bold">Student Portal</a>
 
 
 

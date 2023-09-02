@@ -20,6 +20,8 @@ import { CeateCourseComponent } from './Components/ceate-course/ceate-course.com
 import { InstructorCourcesComponent } from './Pages/instructor-cources/instructor-cources.component';
 import { ParticularCourseAssignmentsComponent } from './Pages/particular-course-assignments/particular-course-assignments.component';
 import { SubmissionComponent } from './Pages/submission/submission.component';
+import { InstructorDashboardComponent } from './Components/instructor-dashboard/instructor-dashboard.component';
+import { LoaderComponent } from './Components/loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { SubmissionComponent } from './Pages/submission/submission.component';
     CeateCourseComponent,
     InstructorCourcesComponent,
     ParticularCourseAssignmentsComponent,
-    SubmissionComponent
+    SubmissionComponent,
+    InstructorDashboardComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

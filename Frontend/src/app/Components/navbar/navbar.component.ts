@@ -22,6 +22,12 @@ export class NavbarComponent {
     console.log(this.toggleLogin);
   }
   Onclick(){
+    // console.log(this.data.role)
+    // if(this.data.role=="student"){
+
+    //   alert("good")
+    //   this.router.navigate(['']);
+    // }
      this.isLoggedIn=!this.isLoggedIn
      console.log(this.isLoggedIn)
   }
