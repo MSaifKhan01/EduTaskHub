@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -51,13 +52,19 @@ export class NavbarComponent {
     }
   }
   logout(): void {
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
-    localStorage.removeItem('id');
+    localStorage.clear()
+    // localStorage.removeItem('user');
+    // localStorage.removeItem('token');
+    // localStorage.removeItem('id');
     this.showname = '';
     this.toggleLogin = false;
  
-    alert('Logout Succesfully');
+    Swal.fire({
+      'icon':'success',
+      'title':'Logout Successful',
+      'text':'You have logout succesfully'
+    })
+    // window.location.reload();
     this.router.navigate(['']);
     // window.location.reload();
   }

@@ -23,7 +23,7 @@ export class InstructorCourcesComponent implements OnInit{
     })
   }
   SeeAssignment(id:any){
-    // localStorage.setItem('id',id)
+    localStorage.setItem('id',id)
     this.router.navigate(['/courseAssig'])
 
   }
