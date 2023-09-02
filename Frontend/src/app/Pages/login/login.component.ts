@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StudentService } from 'src/app/services/student.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,11 @@ export class LoginComponent {
 
   email!: string
   password!: string
+  isloading!: boolean
   constructor(private studentService: StudentService, private router: Router) { }
   HandleSubmit() {
+    // console.log("hell")
+    this.isloading = true
     let obj = {
       email: this.email,
       password: this.password
@@ -21,17 +25,43 @@ export class LoginComponent {
       console.log(res)
       if (res.msg == "login succesfull") {
         if (res.user.role == "student") {
-          localStorage.setItem('user', JSON.stringify(res.user));
           localStorage.setItem("token", res.token)
-          this.router.navigate(['/'])
-        }else if(res.user.role == "instructor"){
+          localStorage.setItem("user", JSON.stringify(res.user))
+          this.isloading = false
+          Swal.fire({
+            'icon': 'success',
+            'title': `${res.msg}`,
+            'text': 'You have Login Successfully'
+          })
+          setTimeout(() => {
+            this.router.navigate(['/'])
+          }, 2000);
+        } 
+        else if (res.user.role == "instructor") {
 
           // need work here
-          localStorage.setItem('user', JSON.stringify(res.user));
           localStorage.setItem("token", res.token)
-          this.router.navigate(['/'])
-          alert("welcome Instructor")
+          localStorage.setItem("user", JSON.stringify(res.user))
+          this.isloading = false
+          Swal.fire({
+            'icon': 'success',
+            'title': `${res.msg}`,
+            'text': 'You have Login Successfully'
+          })
+          setTimeout(() => {
+            this.router.navigate(['/instrucCourse'])
+          }, 2000);
         }
+        
+        else {
+          this.isloading = false
+          Swal.fire({
+            'icon': 'error',
+            'title': `${res.msg}`,
+            'text': `${res.msg}`
+          })
+        }
+     
 
       }
     })

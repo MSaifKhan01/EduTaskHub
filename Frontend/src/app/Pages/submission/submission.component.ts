@@ -10,6 +10,7 @@ export class SubmissionComponent implements OnInit{
   assid=localStorage.getItem('subid')||""
   
   datas:any[]=[]
+  isloading:boolean=true
 
   constructor(private instructorService:BaseServiceService){}
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class SubmissionComponent implements OnInit{
     // console.log(ids)
     this.instructorService.SeeSubmission(this.assid).subscribe((res)=>{
       this.datas=res.data
+      this.isloading=false
 
       console.log(res)
     })
