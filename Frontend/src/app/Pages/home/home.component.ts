@@ -9,6 +9,7 @@ import { StudentService } from 'src/app/services/student.service';
 export class HomeComponent implements OnInit{
 
   datas:any[]=[]
+  isloading:boolean=true
 
   constructor(private BaseService:BaseServiceService,private StudentService:StudentService){}
   ngOnInit(): void {
@@ -20,6 +21,7 @@ export class HomeComponent implements OnInit{
       
       // alert(res.error.msg)
       this.datas=res.data
+      this.isloading=false
     })
   }
 
@@ -28,7 +30,13 @@ export class HomeComponent implements OnInit{
       // localStorage.setItem("token",res.i)
       // console.log(res.data)
       // console.log(res)
-      alert(res.msg)
+      if(res.msg=="You have enrolled successfully"){
+        alert(res.msg)
+        console.log(res)
+      }else{
+        console.log(res)
+        alert(res.msg)
+      }
     })
   }
 

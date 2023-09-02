@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class InstructorCourcesComponent implements OnInit{
   datas:any[]=[]
+  isloading:boolean=true
   constructor(private instructorService:BaseServiceService,private router:Router){}
   ngOnInit(): void {
     this.getInstructorCourses()
@@ -15,13 +16,21 @@ export class InstructorCourcesComponent implements OnInit{
 
   getInstructorCourses(){
     this.instructorService.getInstructorCourse().subscribe((res)=>{
+      // alert()
       this.datas=res.data
+      this.isloading=false
       console.log(res)
     })
   }
-  HandleClick(id:any){
+  SeeAssignment(id:any){
+    // localStorage.setItem('id',id)
+    this.router.navigate(['/courseAssig'])
+
+  }
+  CreateAssignment(id:any){
     localStorage.setItem('id',id)
     this.router.navigate(['/courseAssig'])
+
   }
 
 }

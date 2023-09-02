@@ -1,5 +1,8 @@
+<app-instructor-dashboard></app-instructor-dashboard>
 <app-ceate-assignment></app-ceate-assignment>
-<div class="flex flex-wrap mx-7">
+<app-loader [isloading]="isloading"></app-loader>
+<!-- <button (click)="TogleForm()">Create Assignment</button> -->
+<div class="flex flex-wrap mx-7" >
     <!-- Course 1 -->
     <div *ngFor="let data of datas" class="w-1/4 px-4 mb-4">
         <div class="bg-white rounded-lg shadow-md hover:shadow-xl p-4">

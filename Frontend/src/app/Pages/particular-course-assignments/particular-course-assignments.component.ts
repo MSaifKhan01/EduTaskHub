@@ -11,6 +11,7 @@ export class ParticularCourseAssignmentsComponent implements OnInit{
 
   courseid=localStorage.getItem("id")||""
   datas:any[]=[]
+  isloading:boolean=true
 
   constructor(private instructorService:BaseServiceService, private router:Router){}
   ngOnInit(): void { 
@@ -21,6 +22,7 @@ export class ParticularCourseAssignmentsComponent implements OnInit{
     this.instructorService.particularCourseAssign(this.courseid).subscribe((res)=>{
       console.log(res)
       this.datas=res.data
+      this.isloading=false
     })
     
   }
@@ -29,6 +31,10 @@ export class ParticularCourseAssignmentsComponent implements OnInit{
     this.router.navigate(['/submission'])
 
   }
+  // changeVisibility=false
+  // TogleForm(){
+  //   this.changeVisibility=!this.changeVisibility
+  // }
 
 
 }
