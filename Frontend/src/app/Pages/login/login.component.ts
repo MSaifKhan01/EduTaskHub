@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StudentService } from 'src/app/services/student.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { User } from 'src/app/Models/AllModels';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent {
   HandleSubmit() {
     // console.log("hell")
     this.isloading = true
-    let obj = {
+    let obj:User = {
       email: this.email,
       password: this.password
     }

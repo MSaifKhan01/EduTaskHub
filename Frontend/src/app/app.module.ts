@@ -22,6 +22,10 @@ import { ParticularCourseAssignmentsComponent } from './Pages/particular-course-
 import { SubmissionComponent } from './Pages/submission/submission.component';
 import { InstructorDashboardComponent } from './Components/instructor-dashboard/instructor-dashboard.component';
 import { LoaderComponent } from './Components/loader/loader.component';
+import { UserprofileComponent } from './Components/userprofile/userprofile.component';
+import { CreateAnnouncementComponent } from './Components/create-announcement/create-announcement.component';
+import { AnnouncementComponent } from './Pages/announcement/announcement.component';
+import { GetAnnouncementComponent } from './Pages/get-announcement/get-announcement.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +44,11 @@ import { LoaderComponent } from './Components/loader/loader.component';
     ParticularCourseAssignmentsComponent,
     SubmissionComponent,
     InstructorDashboardComponent,
-    LoaderComponent
+    LoaderComponent,
+    UserprofileComponent,
+    CreateAnnouncementComponent,
+    AnnouncementComponent,
+    GetAnnouncementComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,43 @@
+<h1>hellll</h1>
+<header class="bg-white shadow">
+ 
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div class="md:flex md:items-center md:justify-between md:space-x-5">
+
+            <div class="flex items-start space-x-5">
+                <div class="flex-shrink-0">
+                    <div class="relative">
+                        <img class="h-16 w-16 rounded-full"
+                            [src]="imageurl"
+                            alt="Sibin O">
+                        <span class="absolute inset-0 shadow-inner rounded-full" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="pt-1.5">
+                    <h1 class="text-2xl font-bold text-gray-900">{{data.instructor_name}} | {{data.coursename}}</h1>
+                    <p class="text-sm font-medium text-gray-500">{{data.announcement_date|date:'medium'}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<div class="py-12">
+    <div class="mx-auto lg:px-8 max-w-6xl">
+        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6 mt-4 border-t-8 border-t-indigo-400">
+            <div class="text-lg max-w-prose mx-auto">
+                <h1>
+                    <span
+                        class="block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{data.title}}</span>
+                </h1>
+            </div>
+            <hr class="my-2">
+            <div class="prose prose-md mx-auto">
+                <p>
+                    {{data.content}}
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>

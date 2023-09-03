@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { BaseServiceService } from 'src/app/services/base-service.service';
 import { StudentService } from 'src/app/services/student.service';
 import Swal from 'sweetalert2';
+import { Course } from 'src/app/Models/AllModels';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit{
   }
 
   getallcourse(){
-    this.BaseService.getAllCourse().subscribe((res)=>{
+    this.BaseService.getAllCourse().subscribe((res:{data:Course[]})=>{
       
       // alert(res.error.msg)
       this.datas=res.data
@@ -49,11 +50,11 @@ export class HomeComponent implements OnInit{
     })
   }
 
-  getStudentcourse(){
-    this.StudentService.getStudentCourse().subscribe((res)=>{
-      console.log(res)
-    })
-  }
+  // getStudentcourse(){
+  //   this.StudentService.getStudentCourse().subscribe((res)=>{
+  //     console.log(res)
+  //   })
+  // }
   // create(){
   //   this.StudentService.enrolCourse(id).subscribe((res)=>{
   //     console.log(res)
