@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
+import { Assingment } from 'src/app/Models/AllModels';
 
 import { BaseServiceService } from 'src/app/services/base-service.service';
 
@@ -16,7 +17,7 @@ export class CeateAssignmentComponent {
   end_date!:any
   constructor(private instructorService:BaseServiceService){}
   HandleSubmit(){
-    let obj={
+    let obj:Assingment={
       title:this.title,
       description:this.description,
       end_date:this.end_date

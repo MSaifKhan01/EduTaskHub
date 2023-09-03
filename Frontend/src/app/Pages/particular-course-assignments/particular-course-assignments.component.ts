@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseServiceService } from 'src/app/services/base-service.service';
-import { NgZone } from '@angular/core';
+import { Assingment } from 'src/app/Models/AllModels';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-particular-course-assignments',
@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 export class ParticularCourseAssignmentsComponent implements OnInit{
 
   courseid=localStorage.getItem("id")||""
-  datas:any[]=[]
+  datas:Assingment[]=[]
   isloading:boolean=true
+
 
   constructor(private instructorService:BaseServiceService, private router:Router){}
   ngOnInit(): void { 
@@ -19,7 +20,7 @@ export class ParticularCourseAssignmentsComponent implements OnInit{
   }
 
   getParticularAssignments(){
-    this.instructorService.particularCourseAssign(this.courseid).subscribe((res)=>{
+    this.instructorService.particularCourseAssign(this.courseid).subscribe((res:{data:Assingment[]})=>{
       console.log(res)
       this.datas=res.data
       this.isloading=false
@@ -31,10 +32,10 @@ export class ParticularCourseAssignmentsComponent implements OnInit{
     this.router.navigate(['/submission'])
 
   }
-  // changeVisibility=false
-  // TogleForm(){
-  //   this.changeVisibility=!this.changeVisibility
-  // }
+  changeVisibility=false
+  TogleForm(){
+    this.changeVisibility=!this.changeVisibility
+  }
 
 
 }

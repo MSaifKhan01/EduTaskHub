@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "CourseRoutes",
     "AssignmentRoutes",
     "SubmissionRoutes",
+    "AnnouncementRoutes",
     "corsheaders"
 ]
 

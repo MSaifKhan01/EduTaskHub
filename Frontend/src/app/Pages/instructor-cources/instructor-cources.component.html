@@ -1,5 +1,6 @@
 <app-instructor-dashboard></app-instructor-dashboard>
-<h1>Your Courses</h1>
+<h1 class="text-3xl font-bold text-center mb-4 shadow-md">Your Courses</h1>
+
 <div class="flex justify-center items-start">
     <app-loader [isloading]="isloading"></app-loader>
   </div>
@@ -10,8 +11,8 @@
             <img [src]="data.image" class="w-full">
             <h3 class="mt-2 text-lg font-semibold">{{data.title}}</h3>
             <p class="text-gray-500">{{data.description}}</p>
-            <button (click)="SeeAssignment(data.id)" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">View Assignments</button>
-            <button (click)="CreateAssignment(data.id)" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Create Assignments</button>
+            <button (click)="SeeAssignment(data.id)" class="mt-8 backgr hover:bg-green-100 text-black font-bold py-2 px-4 rounded-md">View Assignments</button>
+            
         </div>
     </div>
 </div>

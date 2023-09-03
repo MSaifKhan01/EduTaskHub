@@ -27,10 +27,11 @@ export class NavbarComponent {
     // if(this.data.role=="student"){
 
     //   alert("good")
-    //   this.router.navigate(['']);
+    //   
     // }
      this.isLoggedIn=!this.isLoggedIn
      console.log(this.isLoggedIn)
+    
   }
 
   showname: string = '';
@@ -46,16 +47,14 @@ export class NavbarComponent {
     return '';
   }
 
-  rigisterRoute() {
+  LoginRoute() {
     if (this.data.length == 0) {
-      this.router.navigate(['/register']);
+      this.router.navigate(['/login']);
     }
   }
   logout(): void {
     localStorage.clear()
-    // localStorage.removeItem('user');
-    // localStorage.removeItem('token');
-    // localStorage.removeItem('id');
+  
     this.showname = '';
     this.toggleLogin = false;
  
@@ -67,6 +66,11 @@ export class NavbarComponent {
     // window.location.reload();
     this.router.navigate(['']);
     // window.location.reload();
+  }
+
+  userProfile(){
+    console.log("hghghg")
+    this.router.navigate(['/userprofile']);
   }
 
   

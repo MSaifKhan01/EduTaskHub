@@ -3,6 +3,7 @@
 <div class="flex justify-center items-start">
     <app-loader [isloading]="isloading"></app-loader>
   </div>
+  <!-- <h1>jhjbjbj</h1> -->
 <h1 class="text-center font-bold text-2xl bg-gray-300 py-3">Courses Assignments</h1>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
     <div *ngFor="let data of datas"
@@ -20,7 +21,7 @@
             End Date: {{data.end_date | date:'medium'}}
         </p>
         <button
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            class="inline-flex items-center px-3 py-2 text-sm  text-black font-bold backgr rounded-lg hover:bg-green-200"
             (click)="HandleClick(data.assignmentid)">
             View Assignment
             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
