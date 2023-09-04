@@ -19,6 +19,8 @@
 
 
           <button (click)="userProfile()" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"> {{ showname || "" }} </button>
+          <a *ngIf="toggleLogin" (click)="Onclick()"href="/announcement" class=" px-4 py-2 rounded-md hover:bg-gray-200 font-bold">Announcements</a>
+          
       <button
         (click)="toggleLogin ? logout() : LoginRoute()"
         class="px-4 py-2 rounded-md hover:bg-gray-200 font-bold"

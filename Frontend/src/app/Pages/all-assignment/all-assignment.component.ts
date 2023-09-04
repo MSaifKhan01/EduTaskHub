@@ -26,7 +26,9 @@ export class AllAssignmentComponent implements OnInit{
 
   HandleClick(id:any){
     localStorage.setItem('id',id)
-    this.router.navigate(['/particular'])
+    this.router.navigate(['/particular']).then(()=>{
+      window.location.reload()
+    })
   }
 
 }

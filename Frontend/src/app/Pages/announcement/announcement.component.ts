@@ -25,7 +25,9 @@ export class AnnouncementComponent implements OnInit{
 
   HandleClick(data:any){
     localStorage.setItem("announcement",JSON.stringify(data))
-    this.router.navigate(['/getannouncement'])
+    this.router.navigate(['/getannouncement']).then(()=>{
+      window.location.reload()
+    })
 
   }
 
