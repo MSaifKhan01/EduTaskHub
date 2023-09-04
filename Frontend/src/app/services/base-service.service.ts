@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 
-import { Assingment } from '../Models/AllModels';
+import { Announcement, Assingment, Submission } from '../Models/AllModels';
 import { Course } from '../Models/AllModels';
 @Injectable({
   providedIn: 'root'
@@ -51,16 +51,16 @@ export class BaseServiceService {
 
   }
 
-  SeeSubmission(id:any){
+  SeeSubmission(id:any):Observable<{data:Submission[]}>{
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
     // console.log(id)
     const url=`${this.url}/sub/getsub/${id}`
-    return this.http.get<any>(url,{headers})
+    return this.http.get<{data:Submission[]}>(url,{headers})
   }
 
-  CreateAnnouncement(obj:any,id:any):Observable<any>{
+  CreateAnnouncement(obj:Announcement,id:any):Observable<any>{
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })

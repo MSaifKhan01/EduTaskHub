@@ -31,14 +31,21 @@ export class NavbarComponent {
 
   showname: string = '';
   toggleLogin: boolean = false;
+  PortalFrInstructor:boolean=false
+ 
 
   
 
   showName(): string {
+    if(this.data.role=="instructor"){
+      // console.log("testing perpose",this.data.role)
+    this.PortalFrInstructor=true
+    }
     if (this.data && this.data.name) {
       console.log(this.data.name);
       return this.data.name;
     }
+   
     return '';
   }
 

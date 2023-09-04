@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseServiceService } from 'src/app/services/base-service.service';
-
+import { Submission } from 'src/app/Models/AllModels';
 @Component({
   selector: 'app-submission',
   templateUrl: './submission.component.html',
@@ -9,7 +9,7 @@ import { BaseServiceService } from 'src/app/services/base-service.service';
 export class SubmissionComponent implements OnInit{
   assid=localStorage.getItem('subid')||""
   
-  datas:any[]=[]
+  datas:Submission[]=[]
   isloading:boolean=true
 
   constructor(private instructorService:BaseServiceService){}
@@ -20,7 +20,7 @@ export class SubmissionComponent implements OnInit{
   seeSubmission(){
     // let ids=this.assid
     // console.log(ids)
-    this.instructorService.SeeSubmission(this.assid).subscribe((res)=>{
+    this.instructorService.SeeSubmission(this.assid).subscribe((res:{data:Submission[]})=>{
       this.datas=res.data
       this.isloading=false
 

@@ -29,7 +29,9 @@ export class ParticularCourseAssignmentsComponent implements OnInit{
   }
   HandleClick(id:any){
     localStorage.setItem('subid',id)
-    this.router.navigate(['/submission'])
+    this.router.navigate(['/submission']).then(()=>{
+      window.location.reload()
+    })
 
   }
   changeVisibility=false

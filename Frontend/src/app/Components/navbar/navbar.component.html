@@ -14,12 +14,13 @@
        
       </button>
       <button *ngIf="!toggleLogin" class=" px-4 py-2 rounded-md hover:bg-gray-200 font-bold">EduTaskHub Business</button>
-      <a *ngIf="toggleLogin" (click)="Onclick()"href="/course" class=" px-4 py-2 rounded-md hover:bg-gray-200 font-bold">Student Portal</a>
+      <a *ngIf="toggleLogin && !PortalFrInstructor"  (click)="Onclick()"href="/course" class=" px-4 py-2 rounded-md hover:bg-gray-200 font-bold">Student Portal</a>
+      <a *ngIf="toggleLogin && !PortalFrInstructor" (click)="Onclick()"href="/getannouncement" class=" px-4 py-2 rounded-md hover:bg-gray-200 font-bold">Announcements</a>
 
 
 
           <button (click)="userProfile()" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"> {{ showname || "" }} </button>
-          <a *ngIf="toggleLogin" (click)="Onclick()"href="/announcement" class=" px-4 py-2 rounded-md hover:bg-gray-200 font-bold">Announcements</a>
+          
           
       <button
         (click)="toggleLogin ? logout() : LoginRoute()"
@@ -29,8 +30,8 @@
       </button>
     </div>
 </nav>
+<hr class="my-2 border-t-2 border-y-gray-950 mx-auto w-3/4">
 
-<br>
 
 <!-- 
 

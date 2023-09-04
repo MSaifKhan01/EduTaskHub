@@ -18,7 +18,7 @@ export class LoginComponent {
   HandleSubmit() {
     // console.log("hell")
     this.isloading = true
-    let obj:User = {
+    let obj: User = {
       email: this.email,
       password: this.password
     }
@@ -35,9 +35,11 @@ export class LoginComponent {
             'text': 'You have Login Successfully'
           })
           setTimeout(() => {
-            this.router.navigate(['/'])
+            this.router.navigate(['/']).then(() => {
+              window.location.reload()
+            })
           }, 2000);
-        } 
+        }
         else if (res.user.role == "instructor") {
 
           // need work here
@@ -50,22 +52,19 @@ export class LoginComponent {
             'text': 'You have Login Successfully'
           })
           setTimeout(() => {
-            this.router.navigate(['/instrucCourse']).then(()=>{
+            this.router.navigate(['/instrucCourse']).then(() => {
               window.location.reload()
             })
           }, 2000);
         }
-        
-        else {
-          this.isloading = false
-          Swal.fire({
-            'icon': 'error',
-            'title': `${res.msg}`,
-            'text': `${res.msg}`
-          })
-        }
-     
-
+      }
+      else {
+        this.isloading = false
+        Swal.fire({
+          'icon': 'error',
+          'title': `${res.msg}`,
+          'text': `${res.msg}`
+        })
       }
     })
 

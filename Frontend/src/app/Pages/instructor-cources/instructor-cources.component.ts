@@ -26,7 +26,9 @@ export class InstructorCourcesComponent implements OnInit{
   }
   SeeAssignment(id:any){
     localStorage.setItem('id',id)
-    this.router.navigate(['/courseAssig'])
+    this.router.navigate(['/courseAssig']).then(()=>{
+      window.location.reload()
+    })
 
   }
   // CreateAssignment(id:any){
