@@ -23,12 +23,7 @@ export class NavbarComponent {
     console.log(this.toggleLogin);
   }
   Onclick(){
-    // console.log(this.data.role)
-    // if(this.data.role=="student"){
-
-    //   alert("good")
-    //   
-    // }
+  
      this.isLoggedIn=!this.isLoggedIn
      console.log(this.isLoggedIn)
     
@@ -64,8 +59,10 @@ export class NavbarComponent {
       'text':'You have logout succesfully'
     })
     // window.location.reload();
-    this.router.navigate(['']);
-    // window.location.reload();
+    this.router.navigate(['']).then(()=>{
+      window.location.reload();
+    });
+    // 
   }
 
   userProfile(){

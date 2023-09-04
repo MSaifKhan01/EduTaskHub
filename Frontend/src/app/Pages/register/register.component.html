@@ -1,69 +1,8 @@
-<app-navbar></app-navbar>
-<!-- <div class="flex justify-center items-center min-h-screen bg-gray-100 bg-cover bg-center" style="background-image: url('../../../assets/projectVideoImage/BgImageSignupLogin.jpg');">
-    <form (submit)="HandleSubmit()" class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
-      <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Enter your username</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          [(ngModel)]="username"
-          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-          placeholder="JohnDoe123"
-        >
-      </div>
-      <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Enter your email</label>
-        <input
-          type="text"
-          id="email"
-          name="email"
-          [(ngModel)]="email"
-          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-          placeholder="example@example.com"
-        >
-      </div>
-      <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Enter your password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          [(ngModel)]="password"
-          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-          placeholder="********"
-        >
-      </div>
-      <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="role">Select your role</label>
-        <select
-          id="role"
-          name="role"
-          [(ngModel)]="role"
-          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-        >
-          <option value="student">Student</option>
-          <option value="instructor">Instructor</option>
-        </select>
-      </div>
-      
-      <button
-        type="submit"
-        class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-      >
-        Submit
-      </button>
-
-      <p class="mt-4 text-gray-600">Already have an account? <a class="text-blue-500 hover:underline"
-        routerLink="/login">Log In</a></p>
-    </form>
-    
-  </div> -->
+<!-- <app-navbar></app-navbar> -->
 
 
-
-  <section class=" bg-gray-100 flex items-center justify-center">
-    <div class="container mx-auto flex flex-wrap justify-center">
+  <section class=" bg-gray-100  flex items-center justify-center mt-12">
+    <div class="container mx-auto flex flex-wrap justify-center items-center mt-20">
       <!-- Image Column -->
       <div class="lg:w-1/2 xl:w-1/3 p-6 flex items-center justify-center">
         <img src="https://img.freepik.com/free-vector/online-tutorials-concept_52683-37480.jpg?size=626&ext=jpg&ga=GA1.1.57338130.1693766848&semt=ais" class="mx-auto mb-6"
@@ -97,7 +36,7 @@
             <div>
   
               <button type="submit"
-                class="w-full backgr hover:bg-blue-600 text-black font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                class="w-full bg-blue-500 hover:bg-blue-600 text-black font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 <svg *ngIf="isloading" aria-hidden="true" role="status"
                   class="inline w-4 h-4 mr-3 text-white animate-spin" viewBox="0 0 100 101" fill="none"
                   xmlns="http://www.w3.org/2000/svg">

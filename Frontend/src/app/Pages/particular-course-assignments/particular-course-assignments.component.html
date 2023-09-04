@@ -6,7 +6,10 @@
   </div>
   
 <!-- <button (click)="TogleForm()">Create Assignment</button> -->
-<button (click)="TogleForm()">create Assignment</button>
+<button (click)="TogleForm()" class="text-center font-bold text-2xl backgr text-black hover:bg-yellow-400 py-3 px-6 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+    Create Assignment
+  </button>
+  
 <div class="flex flex-wrap mx-7" >
     <!-- Course 1 -->
     <div *ngFor="let data of datas" class="w-1/4 px-4 mb-4">

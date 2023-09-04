@@ -50,7 +50,9 @@ export class LoginComponent {
             'text': 'You have Login Successfully'
           })
           setTimeout(() => {
-            this.router.navigate(['/instrucCourse'])
+            this.router.navigate(['/instrucCourse']).then(()=>{
+              window.location.reload()
+            })
           }, 2000);
         }
         

@@ -10,7 +10,7 @@ import { Course } from 'src/app/Models/AllModels';
 })
 export class HomeComponent implements OnInit{
 
-  datas:any[]=[]
+  datas: Course[] = []
   isloading:boolean=true
 
   constructor(private BaseService:BaseServiceService,private StudentService:StudentService){}
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit{
   getallcourse(){
     this.BaseService.getAllCourse().subscribe((res:{data:Course[]})=>{
       
-      // alert(res.error.msg)
+      
       this.datas=res.data
       this.isloading=false
     })
@@ -50,17 +50,7 @@ export class HomeComponent implements OnInit{
     })
   }
 
-  // getStudentcourse(){
-  //   this.StudentService.getStudentCourse().subscribe((res)=>{
-  //     console.log(res)
-  //   })
-  // }
-  // create(){
-  //   this.StudentService.enrolCourse(id).subscribe((res)=>{
-  //     console.log(res)
-  //     alert(res.msg)
-  //   })
-  // }
+  
 
 
 }

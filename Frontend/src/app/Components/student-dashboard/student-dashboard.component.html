@@ -1,16 +1,23 @@
-<div class="backgr py-1 flex">
+<div class="backgr  flex sticky z-0">
     <div class="w-1/5 ml-2 py-2 rounded items-center hidden sm:block">
         <img src="../../../assets/projectVideoImage/StudentDashboardImage.webp" class="ml-5 rounded" alt="ErrImage">
     </div>
     
     <div>
-        <h1 class="ml-4 sm:ml-56 text-2xl sm:text-5xl mt-6 mb-3 font-extrabold text-black">Welcome {{ showname }} To Dashboard</h1>
-        <nav class="p-4 flex items-center w-full sm:w-6/12 mx-auto">
-            <ul class="flex space-x-4">
-                <li><a href="/course" class="hover:text-white font-bold text-black">Courses</a></li>
-                <li><a href="/assignment" class="hover:text-white font-bold text-black">Assignments</a></li>
-                <li><a href="#" class="hover:text-white font-bold text-black">My List</a></li>
-            </ul>
-        </nav>
+        <div>
+            <h1 class="ml-4 sm:ml-56 text-2xl sm:text-5xl mt-6 mb-3 font-extrabold text-black">Welcome to Your Dashboard, {{ showname }}! </h1>
+        </div>
+        <div>
+            <nav class="sm:ml-56 p-4 flex items-center w-full sm:w-6/12 mx-auto">
+                <ul class="flex space-x-4">
+                    <li><a href="/userprofile" class="hover:text-white font-bold text-black">Profile</a></li>
+                    <li><a href="/course" class="hover:text-white font-bold text-black">Courses</a></li>
+                    <li><a href="/assignment" class="hover:text-white font-bold text-black">Assignments</a></li>
+                    
+                    
+                    
+                </ul>
+            </nav>
+        </div>
     </div>
 </div>
