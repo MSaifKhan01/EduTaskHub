@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/services/student.service';
 import Swal from 'sweetalert2';
+import { Assingment,Submission } from 'src/app/Models/AllModels';
 
 @Component({
   selector: 'app-particular-assignment',
@@ -19,7 +20,7 @@ export class ParticularAssignmentComponent implements OnInit{
   }
 
   getassignment(){
-    this.studentService.getParticular(this.assid).subscribe((res)=>{
+    this.studentService.getParticular(this.assid).subscribe((res:{data:Assingment})=>{
       console.log(res)
       this.data=res.data
       this.isloading=false
@@ -28,7 +29,7 @@ export class ParticularAssignmentComponent implements OnInit{
 
   
   HandleClick(id:number){
-    let obj={
+    let obj:Submission={
       submission_link:this.link
     }
     this.studentService.SubmitAssign(obj,id).subscribe((res)=>{

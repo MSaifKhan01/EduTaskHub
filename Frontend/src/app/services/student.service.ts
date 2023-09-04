@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { User } from '../Models/AllModels';
+import { Announcement, User } from '../Models/AllModels';
 import { Assingment } from '../Models/AllModels';
+import { Submission } from '../Models/AllModels';
 @Injectable({
   providedIn: 'root'
 })
@@ -65,7 +66,7 @@ export class StudentService {
     return this.http.get<{data:Assingment}>(url,{headers})
   }
 
-  SubmitAssign(obj:any,id:number):Observable<any>{
+  SubmitAssign(obj:Submission,id:number):Observable<any>{
     let headers=new HttpHeaders({
       Authorization: `Bearer ${this.token}`
     })
@@ -74,12 +75,12 @@ export class StudentService {
 
   }
 
-  getAnnouncement():Observable<any>{
+  getAnnouncement():Observable<{data:Announcement[]}>{
     let headers=new HttpHeaders({
       Authorization: `Bearer ${this.token}`
     })
     const url=`${this.url}/announcement/get`
-    return this.http.get<any>(url,{headers})
+    return this.http.get<{data:Announcement[]}>(url,{headers})
 
   }
 }

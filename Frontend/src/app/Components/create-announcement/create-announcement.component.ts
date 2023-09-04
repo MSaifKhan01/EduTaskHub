@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Announcement } from 'src/app/Models/AllModels';
 import { BaseServiceService } from 'src/app/services/base-service.service';
 import Swal from 'sweetalert2';
 
@@ -12,7 +13,7 @@ export class CreateAnnouncementComponent implements OnInit{
   title!:string
   content!:string
   courseid:number|string=""
-  datas:any[]=[]
+  datas:Announcement[]=[]
   constructor(private instructorService:BaseServiceService){}
   ngOnInit(): void {
     this.datas=JSON.parse(localStorage.getItem("instructordata")||'[]')

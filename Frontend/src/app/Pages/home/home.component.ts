@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit{
     })
   }
 
-  HandleClick(id:number){
+  HandleClick(id:any){
     this.StudentService.enrolCourse(id).subscribe((res)=>{
       // localStorage.setItem("token",res.i)
       // console.log(res.data)
