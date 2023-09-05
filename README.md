@@ -1,6 +1,7 @@
-# EduTaskHub
 
-# Backend-Link:- https://edutaskhubbackend.onrender.com
+Deployed Link :- https://edutaskhub-gi201.netlify.app/
+Backend-Link:- https://edutaskhubbackend.onrender.com
+
 
 # EduTaskHub - A Learning Management System
 
