@@ -25,6 +25,7 @@ export class NavbarComponent {
   Onclick(){
   
      this.isLoggedIn=!this.isLoggedIn
+    //  this.router.navigate(['/getannouncement']);
      console.log(this.isLoggedIn)
     
   }
