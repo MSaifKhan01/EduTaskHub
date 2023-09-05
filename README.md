@@ -46,7 +46,7 @@ Our journey to create EduTaskHub involved diving into new technologies, all than
 
 - *Database:* PostgreSQL - Ensuring data reliability and performance.
 
-- *Deployment:* We chose Render for backend deployment  on Render.
+- *Deployment:* We chose Render for backend deployment  on Render and for Frontend deployment  on netlify.
 
 ## Learning Journey
 
