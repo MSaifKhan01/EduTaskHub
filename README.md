@@ -5,6 +5,8 @@
 # EduTaskHub - A Learning Management System
 
 Welcome to EduTaskHub, your gateway to a modern and efficient Learning Management System. 🚀
+![image](https://github.com/MSaifKhan01/EduTaskHub/assets/119418918/31ae6cf6-4ce0-46ba-ac1b-71f865ed5750)
+
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -13,7 +15,6 @@ Welcome to EduTaskHub, your gateway to a modern and efficient Learning Managemen
 - [Deployment](#deployment)
 - [Learning Journey](#learning-journey)
 - [Getting Started](#getting-started)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
