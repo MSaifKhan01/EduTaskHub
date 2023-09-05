@@ -4,9 +4,12 @@
 <div class="flex justify-center items-start">
     <app-loader [isloading]="isloading"></app-loader>
   </div>
-<div class="flex flex-wrap -mx-4">
+  <div *ngIf="nodata" class="flex justify-center">
+    <img class="w-2/4" [src]="images" alt="Error Image" />
+</div>
+<div *ngIf="!nodata" class="flex flex-wrap -mx-4 box-content">
     <!-- Course 1 -->
-    <div *ngFor="let data of datas" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 px-4 mb-4">
+    <div *ngFor="let data of datas" class="animate__animated animate__zoomIn w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 px-4 mb-4">
         <div class="flex flex-col h-full bg-white rounded-lg shadow-md p-4 mt-4">
             <img [src]="data.image" class="w-full">
             <h3 class="mt-2 text-lg font-semibold">{{data.title}}</h3>

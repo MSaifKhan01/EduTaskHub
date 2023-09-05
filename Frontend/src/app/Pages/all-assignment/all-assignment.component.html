@@ -5,10 +5,13 @@
   </div>
   <!-- <h1>jhjbjbj</h1> -->
 <h1 class="text-center font-bold text-2xl bg-gray-300 py-3">Courses Assignments</h1>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+<div *ngIf="nodata" class="flex justify-center">
+    <img class="w-2/4" [src]="images" alt="Error Image" />
+</div>
+<div *ngIf="!nodata" class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
     <div *ngFor="let data of datas"
 
-        class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        class="animate__animated animate__zoomIn max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h1 class="text-center text-blue-500 font-semibold">Course-Name: {{ data.course_name }}</h1>
 
         <a href="#">

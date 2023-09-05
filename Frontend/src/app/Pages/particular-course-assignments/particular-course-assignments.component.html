@@ -6,13 +6,22 @@
   </div>
   
 <!-- <button (click)="TogleForm()">Create Assignment</button> -->
-<button (click)="TogleForm()" class="text-center font-bold text-2xl backgr text-black hover:bg-yellow-400 py-3 px-6 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+<!-- <button (click)="TogleForm()" class="text-center font-bold text-2xl backgr text-black hover:bg-yellow-400 py-3 px-6 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50 flex justify-center items-center">
     Create Assignment
-  </button>
+  </button> -->
+
+  <div class="flex justify-center items-center mt-3">
+    <button (click)="TogleForm()" class="text-center font-bold text-2xl bg-yellow-400 text-black hover:bg-yellow-500 py-3 px-6 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+      Create Assignment
+    </button>
+  </div>
+  <div *ngIf="nodata" class="flex justify-center">
+    <img class="w-2/4" [src]="images" alt="Error Image" />
+</div>
   
-<div class="flex flex-wrap mx-7" >
+<div *ngIf="!nodata" class="flex flex-wrap mx-7" >
     <!-- Course 1 -->
-    <div *ngFor="let data of datas" class="w-1/4 px-4 mb-4">
+    <div *ngFor="let data of datas" class="animate__animated animate__zoomIn w-1/4 px-4 mb-4">
         <div class="bg-blue-100 rounded-lg shadow-md hover:shadow-xl p-4 h-[350px] flex flex-col justify-between">
             <div>
                 <h3 class="mt-2 text-lg font-semibold">{{data.title}}</h3>

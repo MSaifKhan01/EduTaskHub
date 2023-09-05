@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/services/student.service';
 import Swal from 'sweetalert2';
 import { Assingment,Submission } from 'src/app/Models/AllModels';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-particular-assignment',
@@ -14,7 +15,7 @@ export class ParticularAssignmentComponent implements OnInit{
    assid=localStorage.getItem('id')
    link!:string
    isloading:boolean=true
-  constructor(private studentService:StudentService){}
+  constructor(private studentService:StudentService,private router: Router){}
   ngOnInit(): void {
     this.getassignment()
   }
@@ -40,6 +41,7 @@ export class ParticularAssignmentComponent implements OnInit{
           'title': `${res.msg}`,
           'text': 'Assignment Submitted Successfully'
         })
+        this.router.navigate(["/assignment"])
       } else {
         this.link=""
         Swal.fire({

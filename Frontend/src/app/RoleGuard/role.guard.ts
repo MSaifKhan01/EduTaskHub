@@ -5,7 +5,7 @@ export const roleGuard: CanActivateFn = (route, state) => {
   const router=new Router()
   if(user){
     if(user.role=="instructor"){
-      router.navigate(['/instructor'])
+      router.navigate(['/instrucCourse'])
       return false
     }else{
       return true

@@ -36,7 +36,7 @@
     <hr class="my-4 border-t border-gray-300">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
         <!-- Course Cards -->
-        <div *ngFor="let data of datas" class="course-card p-4 shadow-md bg-teal-100 rounded-md w-11/12">
+        <div *ngFor="let data of datas" class="animate__animated animate__zoomIn course-card p-4 shadow-md bg-teal-100 rounded-md w-11/12">
             <div class="course-image m-2 relative flex items-center">
                 <img [src]="data.image" alt="Course 2" class="w-72 h-64 mx-auto">
             </div>
@@ -85,45 +85,94 @@
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
          <!-- Item 1 -->
        
-        <div class="bg-white rounded-lg shadow-md p-4" data-carousel-item>
-            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="" class="w-96 h-52 rounded-lg mx-auto mt-2">
+        <div class="bg-white rounded-lg shadow-md p-4 flex justify-center items-center gap-8" data-carousel-item>
+          
+            <div class=" w-96 h-60">
+                <img src="https://avatars.githubusercontent.com/u/119418918?v=4" alt="" class="w-72 h-52 rounded-lg mx-auto mt-2">
+            </div>
 
-            <h3 class="text-center mt-2">Vijay Shekhar Sharma</h3>
-            <p class="text-center text-gray-500">Founder & CEO</p>
-            <a href=""><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="" class="w-40 mx-auto mt-2"></a>
+            <div>
+                <h3 class="text-center mt-2 font-bold text-4xl">Mohd Saif Khan</h3>
+            <p class="text-center text-gray-500 text-lg">Full Stack Web Developer</p>
+            
+                <div class="flex gap-4 ml-12">
+                    <a href="https://www.linkedin.com/in/mohd-saif-khan-3b4979202/" class="text-green-400 font-bold mt-6 tex">Linkdin</a>
+                    <a href="https://www.linkedin.com/in/mohd-saif-khan-3b4979202/"><img src="https://img.freepik.com/premium-psd/linkedin-apps-logo-round-square-3d-style-design-icon-asset-isolated_384205-87.jpg?size=626&ext=jpg&ga=GA1.2.57338130.1693766848&semt=ais" alt="" class="w-28 h-14 mx-auto mt-2"> </a>
+                </div>
+            
+            </div>
           </div>
           
         <!-- Item 2 -->
-        <div class="bg-white rounded-lg shadow-md p-4" data-carousel-item>
-            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="" class="w-96 h-52 rounded-lg mx-auto mt-2">
+        <div class="bg-white rounded-lg shadow-md p-4 flex justify-center items-center gap-8" data-carousel-item>
+            <div class=" w-96 h-60">
+                <img src="https://avatars.githubusercontent.com/u/119409470?v=4" alt="" class="w-72 h-52 rounded-lg mx-auto mt-2">
+            </div>
 
-            <h3 class="text-center mt-2">Vijay Shekhar Sharma</h3>
-            <p class="text-center text-gray-500">Founder & CEO</p>
-            <a href=""><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="" class="w-40 mx-auto mt-2"></a>
+            <div>
+                <h3 class="text-center mt-2 font-bold text-4xl">Faizan Shaikh</h3>
+            <p class="text-center text-gray-500 text-lg">Full Stack Web Developer</p>
+            
+                <div class="flex gap-4 ml-6">
+                    <a href="https://www.linkedin.com/in/faizansk814/" class="text-green-400 font-bold mt-6 tex">Linkdin</a>
+                    <a href="https://www.linkedin.com/in/faizansk814/"><img src="https://img.freepik.com/premium-psd/linkedin-apps-logo-round-square-3d-style-design-icon-asset-isolated_384205-87.jpg?size=626&ext=jpg&ga=GA1.2.57338130.1693766848&semt=ais" alt="" class="w-28 h-14 mx-auto mt-2"> </a>
+                </div>
+            
+            </div>
           </div>
         <!-- Item 3 -->
-        <div class="bg-white rounded-lg shadow-md p-4" data-carousel-item>
-            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="" class="w-96 h-52 rounded-lg mx-auto mt-2">
+        <div class="bg-white rounded-lg shadow-md p-4 flex justify-center items-center gap-8" data-carousel-item>
+          
+            <div class=" w-96 h-60">
+                <img src="https://avatars.githubusercontent.com/u/119395145?v=4" alt="" class="w-72 h-52 rounded-lg mx-auto mt-2">
+            </div>
 
-            <h3 class="text-center mt-2">Vijay Shekhar Sharma</h3>
-            <p class="text-center text-gray-500">Founder & CEO</p>
-            <a href=""><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="" class="w-40 mx-auto mt-2"></a>
+            <div>
+                <h3 class="text-center mt-2 font-bold text-4xl">Shahbaz Shaikh</h3>
+            <p class="text-center text-gray-500 text-lg">Full Stack Web Developer</p>
+            
+                <div class="flex gap-4 ml-10">
+                    <a href="https://www.linkedin.com/in/shahbazshaikh4022/" class="text-green-400 font-bold mt-6 tex">Linkdin</a>
+                    <a href="https://www.linkedin.com/in/shahbazshaikh4022/"><img src="https://img.freepik.com/premium-psd/linkedin-apps-logo-round-square-3d-style-design-icon-asset-isolated_384205-87.jpg?size=626&ext=jpg&ga=GA1.2.57338130.1693766848&semt=ais" alt="" class="w-28 h-14 mx-auto mt-2"> </a>
+                </div>
+            
+            </div>
           </div>
         <!-- Item 4 -->
-        <div class="bg-white rounded-lg shadow-md p-4" data-carousel-item>
-            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="" class="w-96 h-52 rounded-lg mx-auto mt-2">
+        <div class="bg-white rounded-lg shadow-md p-4 flex justify-center items-center gap-8" data-carousel-item>
+          
+            <div class=" w-96 h-60">
+                <img src="https://avatars.githubusercontent.com/u/119392202?v=4" alt="" class="w-72 h-52 rounded-lg mx-auto mt-2">
+            </div>
 
-            <h3 class="text-center mt-2">Vijay Shekhar Sharma</h3>
-            <p class="text-center text-gray-500">Founder & CEO</p>
-            <a href=""><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="" class="w-40 mx-auto mt-2"></a>
+            <div>
+                <h3 class="text-center mt-2 font-bold text-4xl">Mayank Kiran Khobragade</h3>
+            <p class="text-center text-gray-500 text-lg">Full Stack Web Developer</p>
+            
+                <div class="flex gap-4 ml-36">
+                    <a href="https://www.linkedin.com/in/mayank-kiran-khobragade/" class="text-green-400 font-bold mt-6 tex">Linkdin</a>
+                    <a href="https://www.linkedin.com/in/mayank-kiran-khobragade/"><img src="https://img.freepik.com/premium-psd/linkedin-apps-logo-round-square-3d-style-design-icon-asset-isolated_384205-87.jpg?size=626&ext=jpg&ga=GA1.2.57338130.1693766848&semt=ais" alt="" class="w-28 h-14 mx-auto mt-2"> </a>
+                </div>
+            
+            </div>
           </div>
         <!-- Item 5 -->
-        <div class="bg-white rounded-lg shadow-md p-4" data-carousel-item>
-            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="" class="w-96 h-52 rounded-lg mx-auto mt-2">
+        <div class="bg-white rounded-lg shadow-md p-4 flex justify-center items-center gap-8" data-carousel-item>
+          
+            <div class=" w-96 h-60">
+                <img src="https://avatars.githubusercontent.com/u/119418918?v=4" alt="" class="w-72 h-52 rounded-lg mx-auto mt-2">
+            </div>
 
-            <h3 class="text-center mt-2">Vijay Shekhar Sharma</h3>
-            <p class="text-center text-gray-500">Founder & CEO</p>
-            <a href=""><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="" class="w-40 mx-auto mt-2"></a>
+            <div>
+                <h3 class="text-center mt-2 font-bold text-4xl">Mohd Saif Khan</h3>
+            <p class="text-center text-gray-500 text-lg">Full Stack Web Developer</p>
+            
+                <div class="flex gap-4 ml-12">
+                    <a href="https://www.linkedin.com/in/mohd-saif-khan-3b4979202/" class="text-green-400 font-bold mt-6 tex">Linkdin</a>
+                    <a href="https://www.linkedin.com/in/mohd-saif-khan-3b4979202/"><img src="https://img.freepik.com/premium-psd/linkedin-apps-logo-round-square-3d-style-design-icon-asset-isolated_384205-87.jpg?size=626&ext=jpg&ga=GA1.2.57338130.1693766848&semt=ais" alt="" class="w-28 h-14 mx-auto mt-2"> </a>
+                </div>
+            
+            </div>
           </div>
     </div>
     <!-- Slider indicators -->
