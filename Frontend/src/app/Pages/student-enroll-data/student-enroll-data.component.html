@@ -5,11 +5,15 @@
     <app-loader [isloading]="isloading"></app-loader>
   </div>
 
-<div class="mt-8 px-4">
+  <div *ngIf="nodata" class="flex justify-center">
+    <img class="w-2/4" [src]="images" alt="Error Image" />
+</div>
+
+<div *ngIf="!nodata" class="mt-8 px-4">
     <h2 class="text-2xl font-semibold mb-4">Your Courses</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <!-- Course 1 -->
-        <div *ngFor="let data of datas" class="flex items-stretch ">
+        <div *ngFor="let data of datas" class=" animate__animated animate__zoomIn flex items-stretch ">
             <div class=" bg-teal-100 rounded-lg shadow-md p-4 w-full ">
                 <img [src]="data.image" class="w-full h-40 object-cover">
                 <h3 class="mt-2 text-lg font-semibold">{{data.coursename}}</h3>

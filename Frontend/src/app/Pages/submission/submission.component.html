@@ -3,7 +3,10 @@
 <div class="flex justify-center items-start">
     <app-loader [isloading]="isloading"></app-loader>
   </div> -->
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <div *ngIf="nodata" class="flex justify-center">
+    <img class="w-2/4" [src]="images" alt="Error Image" />
+</div>
+<div *ngIf="!nodata" class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -26,7 +29,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let data of datas" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+            <tr *ngFor="let data of datas" class="animate__animated animate__zoomIn bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{data.studentid}}
                 </td>

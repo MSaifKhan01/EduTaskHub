@@ -15,11 +15,14 @@
         <app-loader [isloading]="isloading"></app-loader>
         <!-- <app-loader [isloading]="isloading"></app-loader> -->
     </div>
+    <div *ngIf="nodata" class="flex justify-center">
+        <img class="w-2/4" [src]="images" alt="Error Image" />
+    </div>
 
-    <div class="container mx-auto mt-6">
+    <div *ngIf="!nodata" class="container mx-auto mt-6">
         <div>
             <div class="-mx-4">
-                <div *ngFor="let data of datas" class="w-full px-4 mb-2">
+                <div *ngFor="let data of datas" class="animate__animated animate__zoomIn w-full px-4 mb-2">
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl flex justify-between"
                         (click)="HandleClick(data)">
                         <div>

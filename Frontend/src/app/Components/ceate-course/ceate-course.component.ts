@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Course } from 'src/app/Models/AllModels';
 import { BaseServiceService } from 'src/app/services/base-service.service';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,7 +14,7 @@ styleUrls: ['./ceate-course.component.css']
 })
 export class CeateCourseComponent {
   course!: FormGroup;
-  constructor(private fb: FormBuilder, private instructorService:BaseServiceService) {
+  constructor(private fb: FormBuilder, private instructorService:BaseServiceService,private router: Router) {
     this.courseCall();
   }
   ngOnInit(): void {}
@@ -37,6 +38,7 @@ export class CeateCourseComponent {
           title: `Course Created Succesfully`,
           text: `${data.msg}`,
         });
+        this.router.navigate(["/instrucCourse"])
       });
     }
   }
