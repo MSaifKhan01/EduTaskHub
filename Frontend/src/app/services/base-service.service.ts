@@ -10,16 +10,16 @@ import { Course } from '../Models/AllModels';
 export class BaseServiceService {
 
   
-  // private Myurl="https://edutaskhubbackend.onrender.com"
+  private Myurl="https://edutaskhubbackend.onrender.com"
   token:string=localStorage.getItem("token")||""
-  private url="http://localhost:8000"
+  // private url="http://localhost:8000"
   constructor(private http:HttpClient) { }
 
   getAllCourse():Observable<{data:Course[]}>{
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
-    const geturl=`${this.url}/course/get`
+    const geturl=`${this.Myurl}/course/get`
     return this.http.get<{data:Course[]}>(geturl,{headers})
   }
 
@@ -27,7 +27,7 @@ export class BaseServiceService {
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
-    const url=`${this.url}/course/instrucCourses`
+    const url=`${this.Myurl}/course/instrucCourses`
     return this.http.get<{data:Course[]}>(url,{headers})
   }
 
@@ -36,7 +36,7 @@ export class BaseServiceService {
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
-    const url=`${this.url}/assignment/ParticularCourse/${id}`
+    const url=`${this.Myurl}/assignment/ParticularCourse/${id}`
     return this.http.get<{data:Assingment[]}>(url,{headers})  
   }
 
@@ -46,7 +46,7 @@ export class BaseServiceService {
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
-    const url=`${this.url}/assignment/create/${id}`
+    const url=`${this.Myurl}/assignment/create/${id}`
     return this.http.post<any>(url,obj,{headers})
 
   }
@@ -56,7 +56,7 @@ export class BaseServiceService {
       Authorization:`Bearer ${this.token}`
     })
     // console.log(id)
-    const url=`${this.url}/sub/getsub/${id}`
+    const url=`${this.Myurl}/sub/getsub/${id}`
     return this.http.get<{data:Submission[]}>(url,{headers})
   }
 
@@ -64,7 +64,7 @@ export class BaseServiceService {
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
-    const url=`${this.url}/announcement/create/${id}`
+    const url=`${this.Myurl}/announcement/create/${id}`
     return this.http.post(url,obj,{headers})
   }
 
@@ -72,7 +72,7 @@ export class BaseServiceService {
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
-    const url=`${this.url}/course/create`
+    const url=`${this.Myurl}/course/create`
     return this.http.post<any>(url,obj,{headers})
   }
 }

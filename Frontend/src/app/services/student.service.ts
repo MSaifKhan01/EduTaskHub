@@ -10,21 +10,20 @@ import { Submission } from '../Models/AllModels';
 export class StudentService {
 
   
-  // private url="https://ed-tech-backend-8way.onrender.com"
-   // private Myurl="https://edutaskhubbackend.onrender.com"
+   private Myurl="https://edutaskhubbackend.onrender.com"
    token:string=localStorage.getItem("token")||""
    
-   private url="http://localhost:8000"
+  //  private url="http://localhost:8000"
  
   constructor(private http:HttpClient) { }
 
   registerStudent(obj:User):Observable<any>{
-    const url=`${this.url}/user/register`
+    const url=`${this.Myurl}/user/register`
     return this.http.post<any>(url,obj)
   }
 
   loginstudent(obj:User):Observable<any>{
-    const url=`http://localhost:8000/user/login`
+    const url=`https://edutaskhubbackend.onrender.com/user/login`
     return this.http.post<any>(url,obj)
   }
 
@@ -33,7 +32,7 @@ export class StudentService {
     let headers=new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
-    const url=`http://localhost:8000/enrol/create/${id}`
+    const url=`https://edutaskhubbackend.onrender.com/enrol/create/${id}`
     return this.http.post<any>(url,{},{headers})
   }
 
@@ -41,7 +40,7 @@ export class StudentService {
     let headers=new HttpHeaders({
       Authorization: `Bearer ${this.token}`
     })
-    const url=`http://localhost:8000/enrol/getstudent`
+    const url=`https://edutaskhubbackend.onrender.com/enrol/getstudent`
     return this.http.get<any>(url,{headers})
   }
 
@@ -54,7 +53,7 @@ export class StudentService {
     let headers=new HttpHeaders({
       Authorization: `Bearer ${this.token}`
     })
-    let url=`http://localhost:8000/assignment/get`
+    let url=`https://edutaskhubbackend.onrender.com/assignment/get`
     return this.http.get<{data:Assingment[]}>(url,{headers})
   }
 
@@ -62,7 +61,7 @@ export class StudentService {
     let headers=new HttpHeaders({
       Authorization: `Bearer ${this.token}`
     })
-    const url=`${this.url}/assignment/see/${id}`
+    const url=`${this.Myurl}/assignment/see/${id}`
     return this.http.get<{data:Assingment}>(url,{headers})
   }
 
@@ -70,7 +69,7 @@ export class StudentService {
     let headers=new HttpHeaders({
       Authorization: `Bearer ${this.token}`
     })
-    const url=`${this.url}/sub/submit/${id}`
+    const url=`${this.Myurl}/sub/submit/${id}`
     return this.http.post(url,obj,{headers})
 
   }
@@ -79,7 +78,7 @@ export class StudentService {
     let headers=new HttpHeaders({
       Authorization: `Bearer ${this.token}`
     })
-    const url=`${this.url}/announcement/get`
+    const url=`${this.Myurl}/announcement/get`
     return this.http.get<{data:Announcement[]}>(url,{headers})
 
   }
