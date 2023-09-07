@@ -6,7 +6,7 @@ Backend-Link:- https://edutaskhubbackend.onrender.com
 # EduTaskHub - A Learning Management System
 
 Welcome to EduTaskHub, your gateway to a modern and efficient Learning Management System. 🚀
-![EdutaskhubLogo_02](https://github.com/MSaifKhan01/EduTaskHub/assets/119418918/e5ff75f4-dc7f-49c4-82b8-8bde5bd81d95)
+
 
 
 
@@ -23,7 +23,10 @@ Welcome to EduTaskHub, your gateway to a modern and efficient Learning Managemen
 
 EduTaskHub is more than just a Learning Management System; it's a dynamic educational platform that bridges the gap between students and instructors. With the power of AI and a stack of technologies learned within 30 days, we've crafted a solution that takes your learning experience to the next level.
 
-![image](https://github.com/MSaifKhan01/EduTaskHub/assets/119418918/47f40916-d4e7-4345-ba58-adcfe8fdee80)
+#Logo
+
+![EdutaskhubLogo_02](https://github.com/MSaifKhan01/EduTaskHub/assets/119418918/a8f1a293-04ac-4783-9206-d9e9bdb166c6)
+
 
 
 ## Features
